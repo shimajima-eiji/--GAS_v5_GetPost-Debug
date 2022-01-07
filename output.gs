@@ -1,12 +1,12 @@
 function output_api(json) {
-  ContentService.createTextOutput()
-  var output = ContentService.createTextOutput();
+  let output = ContentService.createTextOutput();
   output.setMimeType(ContentService.MimeType.JSON);
   output.setContent(JSON.stringify(json));
 
   return output;
 }
 
+// add_valueがJSONである場合、予めJSON.stringfyに掛けておくと、より詳細な内容にまで踏み込める
 function output_sheet(add_value){
   const SSID = PropertiesService.getScriptProperties().getProperty("SSID");
   const SSNAME = PropertiesService.getScriptProperties().getProperty("SSNAME");
