@@ -2,8 +2,14 @@
 新しいAPIサービスを作る時の開発促進のため
 
 ## 主要リンク
-- [リポジトリ](https://github.com/shimajima-eiji/--GAS_v5_GetPost-Debug)
-- [LineBot:Webhook](https://manager.line.biz/account)
+- [開発リポジトリ](https://github.com/shimajima-eiji/--GAS_v5_GetPost-Debug)
+- [Gdrive:ディレクトリ](https://drive.google.com/drive/my-drive)
+- [Gdrive:スクリプト](https://script.google.com/home)
+- [Gdrive:スプレッドシート](https://docs.google.com/spreadsheets)
+- [LineBot:Webhook](https://manager.line.biz/account/@？？？/setting/messaging-api)
+  - アカウントID: 
+- [LineBot:リッチメニュー](https://manager.line.biz/account/@？？？/richmenu)
+  - アカウントID: 
 
 ## バージョン
 ver1.0.0
