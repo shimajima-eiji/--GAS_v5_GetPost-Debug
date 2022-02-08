@@ -1,14 +1,4 @@
 /*
-## 確認事項
-- リポジトリの公開範囲は正しいか
-- README.gsは書いたか
-  - 最初の行は`¥/*`
-  - 最後の行は`*¥/`
-- GithubActionsは導入したか（システム情報を参照）
-- secretsを設定しているか
-  - EMAIL
-  - GASID(Translate GASID: https://github.com/shimajima-eiji/--GAS_v5_Translate)
-
 ## 経緯
 新しいAPIサービスを作る時の開発促進のため
 
