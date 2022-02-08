@@ -2,6 +2,8 @@
 ## 確認事項
 - リポジトリの公開範囲は正しいか
 - README.gsは書いたか
+  - 最初の行は`¥/*`
+  - 最後の行は`*¥/`
 - GithubActionsは導入したか（システム情報を参照）
 - secretsを設定しているか
   - EMAIL
@@ -11,7 +13,8 @@
 新しいAPIサービスを作る時の開発促進のため
 
 ## 主要リンク
-- [開発リポジトリ](https://github.com/shimajima-eiji/--GAS_v5_GetPost-Debug)
+- [リポジトリ](https://github.com/shimajima-eiji/--GAS_v5_GetPost-Debug)
+  - [テンプレート](https://github.com/shimajima-eiji/--GAS_v5_Template)
 - [Gdrive:ディレクトリ](https://drive.google.com/drive/my-drive)
 - [Gdrive:スクリプト](https://script.google.com/home)
 - [Gdrive:スプレッドシート](https://docs.google.com/spreadsheets)
@@ -19,9 +22,12 @@
 ## システムバージョン
 ver1.0.0
 
+## 制限
+
+
 ## 環境変数
 |key|value|用途|備考|
-|---|---|---|---|
+|---|-----|---|----|
 |SSID|スプレッドシートのID|||
 |SSNAME|スプレッドシート名|||
 
@@ -51,7 +57,7 @@ function __doPost_debug() {
 ### curl
 ```
 # Get
-curl -L (GASのWebアプリURL)
+curl -X GET -L (GASのWebアプリURL)?(パラメータ)
 ```
 
 ```
@@ -66,24 +72,43 @@ curl -X POST 'https://example.com/' \
 - [GASの場合](https://qiita.com/murase/items/7a75f07d417366b2dbc8)
 
 ## パラメータ
-### 引数
-|リクエストボディ|概要|
-|---|---|
-|?key=(環境変数)|キーの値を取得|
-|?key=(環境変数)&value=(該当する任意の値)|キーに値を登録|
+### doGet(ない場合は削除)
+エンドポイントの後に?(キー1)=(値1)&(キー2)=(値2)でパラメータを渡す
 
-### 戻り値
-JSON形式
+```
+# GASはリダイレクトするので-Lは必須
+curl -X GET -L (エンドポイント)?(パラメータ)
+```
 
-|パラメータ|欠損の可能性|出力例|
-|---|---|---|
-|result|なし|`Success` or `Failed`|
-|message|あり(set時)|`key's value` or `comment`|
+#### リクエスト
+|キー|キー必須|想定される値|概要|
+|---|-------|---------|---|
+
+#### レスポンス
+レスポンスは([String] or [JSON String] or [JSONS String])形式
+
+|キー|欠損の可能性|想定される値|概要|
+|---|----------|---------|---|
+
+### doPost(ない場合は削除)
+各ライブラリに準拠
+
+#### リクエスト
+|キー|キー必須|想定される値|概要|
+|---|-------|---------|---|
+
+#### レスポンス
+レスポンスは([String] or [JSON String] or [JSONS String])形式
+
+|キー|欠損の可能性|想定される値|概要|
+|---|----------|---------|---|
+
+レスポンスは([String] or [JSON String] or [JSONS String])形式
 
 ## システム管理情報
 | システム名称 | 情報 |
-| --- | --- |
-| READMEフォーマットのバージョン | ver1.2022.02.08 |
+| --------- | ---- |
+| READMEフォーマットのバージョン | ver4.2022.02.08 |
 | README.gs -> README.md | https://github.com/shimajima-eiji/--GAS_v5_Template/blob/main/.github/workflows/convert_gs2md.yml |
 | translate ja -> en | https://github.com/shimajima-eiji/--GAS_v5_Template/blob/main/.github/workflows/translate_ja2en.yml |
 
